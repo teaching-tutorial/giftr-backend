@@ -5,7 +5,7 @@ const isAuthenticated = require('../middleware/isAuthenticated');
 personRouter = Router();
 personRouter.get("/", PersonController.getAll);
 personRouter.get("/:id", PersonController.getOne);
-personRouter.use(isAuthenticated)
+//personRouter.use(isAuthenticated)
 personRouter.post("/", PersonController.create);
 personRouter.put("/:id", PersonController.replace);
 personRouter.patch("/:id", PersonController.update);

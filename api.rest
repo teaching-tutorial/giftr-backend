@@ -1,0 +1,43 @@
+### GET all person
+GET http://localhost:3001/api/person
+
+### GET person by id
+GET http://localhost:3001/api/person/643aca8ef235f45adf261d77
+
+
+### POST person
+POST http://localhost:3001/api/person
+content-type: application/json
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0M2MwMzI0MGFiNDllMTMxM2U1N2I1NiIsImlhdCI6MTY4MTY1NjE4MH0.GJ_OcF99mivj_Aa9_cuhbsqVkJ6lVO4WMqKj6dTtd84
+
+{
+    "name": "Bob2",
+    "dob": "2023-03-25T19:04:43.966Z"
+}
+
+
+### PUT person
+PUT http://localhost:3001/api/person/643c0a36ef44948cffa11fba
+content-type: application/json
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0M2MwMzI0MGFiNDllMTMxM2U1N2I1NiIsImlhdCI6MTY4MTY1NjE4MH0.GJ_OcF99mivj_Aa9_cuhbsqVkJ6lVO4WMqKj6dTtd84
+
+{
+    "name": "John updated by PUT",
+    "dob": "2011-01-02"
+}
+
+
+### PATCH person
+PATCH http://localhost:3001/api/person/643aca8ef235f45adf261d77
+content-type: application/json
+
+{
+    "name": "John updated by PATCH",
+    "dob": "2011-01-03"
+}
+
+### DELETE person
+DELETE http://localhost:3001/api/person/643c0a36ef44948cffa11fba
+authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0M2MwMzI0MGFiNDllMTMxM2U1N2I1NiIsImlhdCI6MTY4MTY1NjE4MH0.GJ_OcF99mivj_Aa9_cuhbsqVkJ6lVO4WMqKj6dTtd84
+
+#####

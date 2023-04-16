@@ -20,7 +20,7 @@ passport.use(
           },
           {
             $set: {
-              fullName: profile.displayName,
+              name: profile.displayName,
               googleId: profile.id,
             },
           },
