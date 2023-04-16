@@ -7,6 +7,7 @@ const MongoStore = require("connect-mongo");
 const morgan = require("morgan");
 const passport = require("passport");
 const session = require("express-session");
+const cors = require('cors')
 
 const personRouter = require("./router/person");
 const { errorHandler } = require("./utils/errors");
@@ -19,6 +20,7 @@ const app = express();
 
 app.use(express.json());
 app.use(morgan("tiny"));
+app.use(cors());
 
 app.use(
   session({

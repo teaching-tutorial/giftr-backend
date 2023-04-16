@@ -37,13 +37,15 @@ authRouter.get(
     const { state } = req.query;
 
     //define the redirectUrl with a fallback if undefined
-    const redirectUrl = state ?? "/api/pokemon";
+    const redirectUrl = state ?? "/api/person";
 
+    console.log("google return payload", req.user);
     //get the user id
     const id = req.user._id.toString();
 
     //generate a token
     const token = jwt.sign({ id }, process.env.JWT_SECRET);
+    console.log("google return token", token);
 
     //redirect with the token
     res.redirect(`${redirectUrl}?token=${token}`);
