@@ -38,6 +38,8 @@ content-type: application/json
 
 ### DELETE person
 DELETE http://localhost:3001/api/person/643c0a36ef44948cffa11fba
+content-type: application/json
 authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0M2MwMzI0MGFiNDllMTMxM2U1N2I1NiIsImlhdCI6MTY4MTY1NjE4MH0.GJ_OcF99mivj_Aa9_cuhbsqVkJ6lVO4WMqKj6dTtd84
 
-#####
+##### GET Auth
+GET http://localhost:3001/api/auth
