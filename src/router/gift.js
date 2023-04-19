@@ -3,7 +3,7 @@ const GiftController = require("../controller/gift");
 const isAuthenticated = require("../middleware/isAuthenticated");
 
 giftRouter = Router();
-giftRouter.get("/", GiftController.getAll);
+giftRouter.get("/api/people/:id/gifts", GiftController.getAll);
 giftRouter.get("/:id", GiftController.getOne);
 giftRouter.use(isAuthenticated);
 giftRouter.post("/", GiftController.create);

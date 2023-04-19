@@ -14,12 +14,13 @@ authRouter.get(
   (req, res, next) => {
     //get the redirect_url from the query params
     //expecting the url to look like /auth/google?redirect_url=http://localhost:3000/
-    const { redirect_url } = req.query;
+    const { redirect_uri } = req.query;
+    console.log("first req.query", req.query);
 
     //add it to the google state
     const authenticator = passport.authenticate("google", {
       scope: ["profile"],
-      state: "something",
+      state: redirect_uri,
     });
 
     //redirect to google
@@ -33,6 +34,7 @@ authRouter.get(
   "/google/callback",
   passport.authenticate("google", { failureRedirect: "/" }),
   (req, res) => {
+    console.log("req.query", req.query);
     //get the state from the query params
     const { state } = req.query;
 
