@@ -2,7 +2,7 @@
 
 const { Schema, model } = require("mongoose");
 
-const giftModel = new Schema({
+const giftSchema = new Schema({
   txt: {
     type: String,
     required: true,
@@ -15,10 +15,6 @@ const giftModel = new Schema({
     type: String,
     required: true,
   },
-  gifts: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "gift",
-    },
-  ],
 },{ timestamps: true } );
+
+module.exports = model("gift", giftSchema);

@@ -11,7 +11,7 @@ const getAll = async (_req, res, next) => {
 
 const getOne = async (req, res, next) => {
   try {
-    const gift = await GiftService.getOne(req.params.id);
+    const gift = await GiftService.getOne(req.params.gid);
     res.json({ data: gift });
   } catch (error) {
     next(error);
@@ -28,22 +28,10 @@ const create = async (req, res, next) => {
   }
 };
 
-const replace = async (req, res, next) => {
-  try {
-    const replacedGift = await GiftService.replace(
-      req.params.id,
-      req.sanitizedBody
-    );
-    res.json({ data: replacedGift });
-  } catch (error) {
-    next(error);
-  }
-};
-
 const update = async (req, res, next) => {
   try {
     const updatedGift = await GiftService.update(
-      req.params.id,
+      req.params.gid,
       req.sanitizedBody
     );
 
@@ -55,7 +43,7 @@ const update = async (req, res, next) => {
 
 const deleteOne = async (req, res, next) => {
   try {
-    const deletedGift = await GiftService.deleteOne(req.params.id);
+    const deletedGift = await GiftService.deleteOne(req.params.gid);
     res.json({ data: deletedGift });
   } catch (error) {
     next(error);
@@ -66,7 +54,6 @@ module.exports = {
   getAll,
   getOne,
   create,
-  replace,
   update,
   deleteOne,
 };

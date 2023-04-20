@@ -1,12 +1,12 @@
 ### GET all person
-GET http://localhost:3001/api/person
+GET http://localhost:3001/api/people
 
 ### GET person by id
 GET http://localhost:3001/api/person/643aca8ef235f45adf261d77
 
 
 ### POST person
-POST http://localhost:3001/api/person
+POST http://localhost:3001/api/people
 content-type: application/json
 authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0M2MwMzI0MGFiNDllMTMxM2U1N2I1NiIsImlhdCI6MTY4MTY1NjE4MH0.GJ_OcF99mivj_Aa9_cuhbsqVkJ6lVO4WMqKj6dTtd84
 
@@ -43,3 +43,34 @@ authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0M2MwMzI0M
 
 ##### GET Auth
 GET http://localhost:3001/api/auth
+
+
+#### Get gifts
+GET http://localhost:3001/api/people/64407c026ef46c8291f6f8b4/gifts
+
+#### Get gift by id
+GET http://localhost:3001/api/people/64407c026ef46c8291f6f8b4/gifts/6440994f87933b5a13fc0d24
+
+
+#### POST gifts
+POST http://localhost:3001/api/people/64407c026ef46c8291f6f8b4/gifts
+content-type: application/json
+
+{
+    "txt": "my best gift 1",
+    "store": "amazon",
+    "url": "http://gooogle.com"
+}
+
+#### PATCH gift
+PATCH http://localhost:3001/api/people/64407c026ef46c8291f6f8b4/gifts/6440994f87933b5a13fc0d24
+content-type: application/json
+
+{
+    "txt": "my best gift 2",
+    "store": "amazon",
+    "url": "http://gooogle.com"
+}
+
+#### delete gift
+DELETE  http://localhost:3001/api/people/64407c026ef46c8291f6f8b4/gifts/64409b08bf3da27468a9743e
